@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 const app = express();
 
 app.use(express.static(__dirname));
@@ -10,6 +10,5 @@ app.get('*', (req,res) => {
 });
 
 
-app.listen(process.env.PORT, process.env.IP,function(){
-    console.log("Server started!!!");
-});
+app.listen(port);
+console.log('Server started');
